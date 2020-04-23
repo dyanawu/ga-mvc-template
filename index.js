@@ -14,7 +14,8 @@ app.use(express.urlencoded({
   extended: true
 }));
 
-app.use(express.static('public'));
+const path = require('path');
+app.use(express.static(path.join(__dirname, 'public')));
 
 // view engine
 const reactEngine = require('express-react-views').createEngine();
